@@ -11,7 +11,7 @@ for host in $ALL_NODES; do
   echo "Checking SSH and sudo on $host"
   ssh_node "$host" 'hostname; sudo -n true; getent hosts team-39-nn >/dev/null'
 done
-# This project MUST NOT automatically migrate existing Hadoop installations.
+
 for host in $ALL_NODES; do
   ssh_node "$host" 'if [[ -f /home/team/hdfs/name/current/VERSION ]]; then echo "Legacy NameNode metadata under /home/team: manual migration required" >&2; exit 8; fi' || {
     echo "Existing namespace or SSH issue on $host; review it manually before deploying" >&2
@@ -34,6 +34,8 @@ for host in $ALL_NODES; do
     scp_node "$ROOT/configs/$file" "$host" "/tmp/team39-config/$file"
   done
   scp_node "$ROOT/scripts/remote-setup.sh" "$host" '/tmp/team39-remote-setup.sh'
+  scp_node "$ROOT/scripts/fix-hostnames-node.py" "$host" '/tmp/team39-fix-hostnames.py'
+  ssh_node "$host" 'sudo python3 /tmp/team39-fix-hostnames.py'
   ssh_node "$host" 'bash /tmp/team39-remote-setup.sh'
   scp_node "$ROOT/systemd/hdfs-datanode.service" "$host" '/tmp/hdfs-datanode.service'
   ssh_node "$host" 'sudo install -m 0644 /tmp/hdfs-datanode.service /etc/systemd/system/hdfs-datanode.service; sudo systemctl daemon-reload'
@@ -43,7 +45,7 @@ for kind in namenode secondary; do
   ssh_node "$NN" "sudo install -m 0644 /tmp/hdfs-${kind}.service /etc/systemd/system/hdfs-${kind}.service"
 done
 ssh_node "$NN" 'sudo systemctl daemon-reload'
-# Refuse to reformat partially initialized or previously used namespaces.
+
 echo 'Checking NameNode initialization...'
 ssh_node "$NN" 'set -e;
  if [[ -f /var/lib/hdfs/name/current/VERSION ]]; then
