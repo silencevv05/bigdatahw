@@ -1,0 +1,18 @@
+[Unit]
+Description=HDFS SecondaryNameNode (team-39)
+Wants=network-online.target
+After=network-online.target hdfs-namenode.service
+[Service]
+Type=simple
+User=hdfs
+Group=hdfs
+Environment=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+Environment=HADOOP_HOME=/opt/hadoop
+Environment=HADOOP_LOG_DIR=/var/log/hdfs
+Environment=HADOOP_HEAPSIZE_MAX=768m
+ExecStart=/opt/hadoop/bin/hdfs secondarynamenode
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+[Install]
+WantedBy=multi-user.target

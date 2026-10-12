@@ -1,0 +1,5 @@
+.cache/
+evidence/*.log
+*.tar.gz
+*.log
+.DS_Store
