@@ -1,0 +1,11 @@
+.cache/
+build/
+dist/
+__pycache__/
+*.pyc
+config/cluster.env
+*.jceks
+*.key
+*.pem
+*password*
+.DS_Store

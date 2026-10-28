@@ -1,0 +1,24 @@
+[Unit]
+Description=Hive team-39 HiveServer2 (remote Metastore)
+Wants=network-online.target
+After=network-online.target hive-team39-metastore.service
+Requires=hive-team39-metastore.service
+
+[Service]
+Type=simple
+User=hive
+Group=hive
+WorkingDirectory=/var/lib/hive-team39
+EnvironmentFile=/etc/hive-team39/service.env
+Environment=HIVE_CONF_DIR=/etc/hive-team39/server
+Environment=HADOOP_HEAPSIZE=768
+Environment="HADOOP_CLIENT_OPTS=-Dhive.log.dir=/var/log/hive-team39 -Dhive.log.file=server.log"
+ExecStart=/opt/hive/bin/hiveserver2
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+LimitNOFILE=65536
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
