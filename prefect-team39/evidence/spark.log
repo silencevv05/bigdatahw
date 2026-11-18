@@ -1,0 +1,97 @@
+26/11/17 23:47:42 INFO SparkContext: Running Spark version 3.5.7
+26/11/17 23:47:42 INFO SparkContext: OS info Linux, 6.8.0-139-generic, amd64
+26/11/17 23:47:42 INFO SparkContext: Java version 11.0.33
+26/11/17 23:47:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/11/17 23:47:43 INFO ResourceUtils: ==============================================================
+26/11/17 23:47:43 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/11/17 23:47:43 INFO ResourceUtils: ==============================================================
+26/11/17 23:47:43 INFO SparkContext: Submitted application: DZ5-team39-daily-orders
+26/11/17 23:47:43 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memoryOverhead -> name: memoryOverhead, amount: 128, script: , vendor: , cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/11/17 23:47:43 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/11/17 23:47:43 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/11/17 23:47:43 INFO SecurityManager: Changing view acls to: hive
+26/11/17 23:47:43 INFO SecurityManager: Changing modify acls to: hive
+26/11/17 23:47:43 INFO SecurityManager: Changing view acls groups to:
+26/11/17 23:47:43 INFO SecurityManager: Changing modify acls groups to:
+26/11/17 23:47:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: hive; groups with view permissions: EMPTY; users with modify permissions: hive; groups with modify permissions: EMPTY
+26/11/17 23:47:43 INFO Utils: Successfully started service 'sparkDriver' on port 33537.
+26/11/17 23:47:43 INFO SparkEnv: Registering MapOutputTracker
+26/11/17 23:47:43 INFO SparkEnv: Registering BlockManagerMaster
+26/11/17 23:47:43 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/11/17 23:47:43 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/11/17 23:47:43 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/17 23:47:43 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c6a39eca-9783-4b2c-94e5-950c8900963a
+26/11/17 23:47:43 INFO MemoryStore: MemoryStore started with capacity 127.2 MiB
+26/11/17 23:47:43 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/17 23:47:44 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /10.39.0.10:8032
+26/11/17 23:47:45 INFO Configuration: resource-types.xml not found
+26/11/17 23:47:45 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/11/17 23:47:45 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (1536 MB per container)
+26/11/17 23:47:45 INFO Client: Will allocate AM container, with 384 MB memory including 128 MB overhead
+26/11/17 23:47:45 INFO Client: Setting up container launch context for our AM
+26/11/17 23:47:45 INFO Client: Setting up the launch environment for our AM container
+26/11/17 23:47:45 INFO Client: Preparing resources for our AM container
+26/11/17 23:47:45 INFO Client: Source and destination file systems are the same. Not copying hdfs://10.39.0.11:8020/data/team39/spark/lib/spark-3.5.7-jars.zip
+26/11/17 23:47:46 INFO Client: Uploading resource file:/opt/spark-3.5.7-bin-hadoop3/python/lib/pyspark.zip -> hdfs://10.39.0.11:8020/user/hive/.sparkStaging/application_1794639233623_0003/pyspark.zip
+26/11/17 23:47:46 INFO Client: Uploading resource file:/opt/spark-3.5.7-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip -> hdfs://10.39.0.11:8020/user/hive/.sparkStaging/application_1794639233623_0003/py4j-0.10.9.7-src.zip
+26/11/17 23:47:46 INFO Client: Uploading resource file:/tmp/spark-bf268ec9-3f76-428e-9d14-376706647faf/__spark_conf__5546728886769881819.zip -> hdfs://10.39.0.11:8020/user/hive/.sparkStaging/application_1794639233623_0003/__spark_conf__.zip
+26/11/17 23:47:46 INFO SecurityManager: Changing view acls to: hive
+26/11/17 23:47:46 INFO SecurityManager: Changing modify acls to: hive
+26/11/17 23:47:46 INFO SecurityManager: Changing view acls groups to:
+26/11/17 23:47:46 INFO SecurityManager: Changing modify acls groups to:
+26/11/17 23:47:46 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: hive; groups with view permissions: EMPTY; users with modify permissions: hive; groups with modify permissions: EMPTY
+26/11/17 23:47:46 INFO Client: Submitting application application_1794639233623_0003 to ResourceManager
+26/11/17 23:47:46 INFO YarnClientImpl: Submitted application application_1794639233623_0003
+26/11/17 23:47:47 INFO Client: Application report for application_1794639233623_0003 (state: ACCEPTED)
+26/11/17 23:47:47 INFO Client:
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: root.default
+	 start time: 1794959266821
+	 final status: UNDEFINED
+	 tracking URL: http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003/
+	 user: hive
+26/11/17 23:47:52 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> team-39-en.hse.c.mws, PROXY_URI_BASES -> http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003), /proxy/application_1794639233623_0003
+26/11/17 23:47:52 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+26/11/17 23:47:52 INFO Client: Application report for application_1794639233623_0003 (state: RUNNING)
+26/11/17 23:47:52 INFO Client:
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.39.0.13
+	 ApplicationMaster RPC port: -1
+	 queue: root.default
+	 start time: 1794959266821
+	 final status: UNDEFINED
+	 tracking URL: http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003/
+	 user: hive
+26/11/17 23:47:52 INFO YarnClientSchedulerBackend: Application application_1794639233623_0003 has started running.
+26/11/17 23:47:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35767.
+26/11/17 23:47:52 INFO NettyBlockTransferService: Server created on 10.39.0.10:35767
+26/11/17 23:47:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/11/17 23:47:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManagerMasterEndpoint: Registering block manager 10.39.0.10:35767 with 127.2 MiB RAM, BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:58 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.39.0.12:51302) with ID 2,  ResourceProfileId 0
+26/11/17 23:47:58 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.39.0.13:41756) with ID 1,  ResourceProfileId 0
+26/11/17 23:47:58 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/11/17 23:47:58 INFO BlockManagerMasterEndpoint: Registering block manager team-39-01.hse.c.mws:42719 with 127.2 MiB RAM, BlockManagerId(1, team-39-01.hse.c.mws, 42719, None)
+26/11/17 23:47:58 INFO BlockManagerMasterEndpoint: Registering block manager team-39-00.hse.c.mws:41941 with 127.2 MiB RAM, BlockManagerId(2, team-39-00.hse.c.mws, 41941, None)
+APPLICATION_ID=application_1794639233623_0003
+MASTER=yarn; INPUT=hdfs://10.39.0.11:8020/data/team39/spark/input/orders.tsv
+26/11/17 23:48:15 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
++------------+---------------+------------+--------------+----------+-------+
+|orders_count|customers_count|total_amount|average_amount|order_date|country|
++------------+---------------+------------+--------------+----------+-------+
+|2           |2              |499.90      |249.95        |2026-10-20|KZ     |
+|2           |2              |350.50      |175.25        |2026-10-20|RU     |
+|2           |2              |125.75      |62.88         |2026-10-21|KZ     |
+|2           |2              |920.25      |460.13        |2026-10-21|RU     |
+|2           |2              |900.60      |450.30        |2026-10-22|KZ     |
+|2           |2              |1200.00     |600.00        |2026-10-22|RU     |
++------------+---------------+------------+--------------+----------+-------+
+
+EXECUTORS=Set(team-39-00.hse.c.mws:41941, 10.39.0.10:35767, team-39-01.hse.c.mws:42719)
+SPARK PASS: dz5_team39.daily_orders saved to HDFS

@@ -1,0 +1,93 @@
+23:47:25.683 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8940
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+23:47:30.510 | INFO    | Flow run 'unique-toad' - Beginning flow run 'unique-toad' for flow 'hw_5-team39-orders'
+23:47:30.551 | INFO    | Task run 'Check HDFS input-6fe' - Starting check. Log: /home/team/bigdatahw-dz5/prefect-team39/build/check.log
+23:47:38.106 | INFO    | Task run 'Check HDFS input-6fe' - HDFS PASS: hdfs://10.39.0.11:8020/data/team39/spark/input/orders.tsv
+Input rows: 12
+2026-11-17 23:47:37,622 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /10.39.0.10:8032
+Total Nodes:2
+         Node-Id             Node-State Node-Http-Address       Number-of-Running-Containers
+team-39-01.hse.c.mws:38223              RUNNING team-39-01.hse.c.mws:8042                                  0
+team-39-00.hse.c.mws:38241              RUNNING team-39-00.hse.c.mws:8042                                  0
+23:47:38.108 | INFO    | Task run 'Check HDFS input-6fe' - Stage completed: check
+23:47:38.111 | INFO    | Task run 'Check HDFS input-6fe' - Finished in state Completed()
+23:47:38.115 | INFO    | Task run 'Spark on YARN-631' - Starting spark. Log: /home/team/bigdatahw-dz5/prefect-team39/build/spark.log
+23:48:22.934 | INFO    | Task run 'Spark on YARN-631' -          diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: root.default
+         start time: 1794959266821
+         final status: UNDEFINED
+         tracking URL: http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003/
+         user: hive
+26/11/17 23:47:52 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> team-39-en.hse.c.mws, PROXY_URI_BASES -> http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003), /proxy/application_1794639233623_0003
+26/11/17 23:47:52 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+26/11/17 23:47:52 INFO Client: Application report for application_1794639233623_0003 (state: RUNNING)
+26/11/17 23:47:52 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.39.0.13
+         ApplicationMaster RPC port: -1
+         queue: root.default
+         start time: 1794959266821
+         final status: UNDEFINED
+         tracking URL: http://team-39-en.hse.c.mws:8088/proxy/application_1794639233623_0003/
+         user: hive
+26/11/17 23:47:52 INFO YarnClientSchedulerBackend: Application application_1794639233623_0003 has started running.
+26/11/17 23:47:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35767.
+26/11/17 23:47:52 INFO NettyBlockTransferService: Server created on 10.39.0.10:35767
+26/11/17 23:47:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/11/17 23:47:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManagerMasterEndpoint: Registering block manager 10.39.0.10:35767 with 127.2 MiB RAM, BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.39.0.10, 35767, None)
+26/11/17 23:47:58 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.39.0.12:51302) with ID 2,  ResourceProfileId 0
+26/11/17 23:47:58 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.39.0.13:41756) with ID 1,  ResourceProfileId 0
+26/11/17 23:47:58 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/11/17 23:47:58 INFO BlockManagerMasterEndpoint: Registering block manager team-39-01.hse.c.mws:42719 with 127.2 MiB RAM, BlockManagerId(1, team-39-01.hse.c.mws, 42719, None)
+26/11/17 23:47:58 INFO BlockManagerMasterEndpoint: Registering block manager team-39-00.hse.c.mws:41941 with 127.2 MiB RAM, BlockManagerId(2, team-39-00.hse.c.mws, 41941, None)
+APPLICATION_ID=application_1794639233623_0003
+MASTER=yarn; INPUT=hdfs://10.39.0.11:8020/data/team39/spark/input/orders.tsv
+26/11/17 23:48:15 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
++------------+---------------+------------+--------------+----------+-------+
+|orders_count|customers_count|total_amount|average_amount|order_date|country|
++------------+---------------+------------+--------------+----------+-------+
+|2           |2              |499.90      |249.95        |2026-10-20|KZ     |
+|2           |2              |350.50      |175.25        |2026-10-20|RU     |
+|2           |2              |125.75      |62.88         |2026-10-21|KZ     |
+|2           |2              |920.25      |460.13        |2026-10-21|RU     |
+|2           |2              |900.60      |450.30        |2026-10-22|KZ     |
+|2           |2              |1200.00     |600.00        |2026-10-22|RU     |
++------------+---------------+------------+--------------+----------+-------+
+
+EXECUTORS=Set(team-39-00.hse.c.mws:41941, 10.39.0.10:35767, team-39-01.hse.c.mws:42719)
+SPARK PASS: dz5_team39.daily_orders saved to HDFS
+23:48:22.937 | INFO    | Task run 'Spark on YARN-631' - Stage completed: spark
+23:48:22.940 | INFO    | Task run 'Spark on YARN-631' - Finished in state Completed()
+23:48:22.943 | INFO    | Task run 'Verify Hive results-026' - Starting verify. Log: /home/team/bigdatahw-dz5/prefect-team39/build/verify.log
+23:48:59.244 | INFO    | Task run 'Verify Hive results-026' - SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/apache-hive-4.0.0-alpha-2-bin/lib/log4j-slf4j-impl-2.18.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+
+
+
+HIVE PASS: 6 partitions, 12 orders, amount=3997.00
+2026-10-20      KZ      2       2       499.90  249.95
+2026-10-20      RU      2       2       350.50  175.25
+2026-10-21      KZ      2       2       125.75  62.88
+2026-10-21      RU      2       2       920.25  460.13
+2026-10-22      KZ      2       2       900.60  450.30
+2026-10-22      RU      2       2       1200.00 600.00
+23:48:59.248 | INFO    | Task run 'Verify Hive results-026' - Stage completed: verify
+23:48:59.251 | INFO    | Task run 'Verify Hive results-026' - Finished in state Completed()
+23:48:59.253 | INFO    | Flow run 'unique-toad' - HW5 PASS: all three stages completed
+23:48:59.334 | INFO    | Flow run 'unique-toad' - Finished in state Completed()
+23:48:59.431 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8940
